@@ -2,8 +2,8 @@
 Ans:  String
 
 2.    What will be displayed if the following Java code segment is run?
-      System.out.println("one ");
-      System.out.print("two ");
-      System.out.println("three");
+        System.out.println("one ");
+        System.out.print("two ");
+        System.out.println("three");
 Ans:  one 
       two three
