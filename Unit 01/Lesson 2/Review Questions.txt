@@ -5,12 +5,12 @@ Ans:  "%.*_"
       "4b0ut T!me"
 
 2.    What is wrong with the following code?
-      String s;
-      System.out.println(s);
+        String s;
+        System.out.println(s);
 Ans:  You cannot print a String without setting its value. 
 
 3.    What is wrong with the following code?
-      String s = nextLine();
+        String s = nextLine();
 Ans:  Should be: String s = scan.nextLine();
 
 4.    Which of the following is a legal variable name in Java?
