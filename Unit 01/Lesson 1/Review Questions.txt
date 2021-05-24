@@ -1,0 +1,20 @@
+1.    Which of the following can a String NOT contain?
+Ans:  None of the items listed (meaning String can contain all of the listed types)
+
+2.    To output:
+      Hi
+      There
+
+      You would need to use:
+      System.out._____ ("Hi");
+      System.out.print("There");
+Ans:  println
+
+3.    ________ is when a computer checks your program for errors before running it.
+Ans:  Compiling
+
+4.    ________ tell(s) a computer what to do.
+Ans:  All of the options listed (Commands, Instructions, Programs, Code)
+    
+5.  Which of the following would Java interpret as being a String?
+Ans:  "Hello World" 
