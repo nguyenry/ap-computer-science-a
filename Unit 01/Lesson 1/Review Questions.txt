@@ -16,5 +16,5 @@ Ans:  Compiling
 4.    ________ tell(s) a computer what to do.
 Ans:  All of the options listed (Commands, Instructions, Programs, Code)
     
-5.  Which of the following would Java interpret as being a String?
+5.    Which of the following would Java interpret as being a String?
 Ans:  "Hello World" 
