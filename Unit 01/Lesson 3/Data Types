@@ -1,0 +1,58 @@
+Primitive and Reference Data Types
+This lesson introduces new data types. In Java it’s very important to tell the computer what kind of input you’re going to give it, so it knows how to deal with the data. This means variables in Java are always assigned a type, which tells Java two things:
+  1. What possible values can be stored - this is called a domain and is important as Java needs to know how big a box in memory to allocate for the input.
+  2. What operations can be performed on the data - for example can two variables of this type be added together?
+
+These are some primitive data types used by Java
+  • int - used for storing an integer value. ints are pretty small in memory.
+  • double - used for storing a decimal value (a number which is not an integer). doubles take up more space than ints because of the decimal component.
+  • boolean - used for storing a true or false value, in memory this value can be represented by a single bit of memory, stored as a 1 or 0.
+  • String is also a data type, but is a reference data type. Strings take up lots of space in memory because they have to store each individual character separately. We use Strings for anything we won’t do calculations with, like a street address
+
+We'll learn more about reference data types in the next unit. For now the main difference you need to know is that reference data types can store several different pieces of information (e.g. a String with many different characters). Because of this, the value doesn't get stored directly in the variable like with a primitive, instead a reference to another place in memory is stored.
+
+If we want to do calculations, we need number input. To take number values as input from a Scanner, we need a different command:
+  Scanner scan = new Scanner(System.in);
+  int x = scan.nextInt();
+  double y = scan.nextDouble();
+  
+If we use these commands and then input a String, we’ll get an Input Mismatch Exception, which is a runtime error. That means the code will still compile, but will crash, because we told the Scanner to look for an int or a double, and instead gave it a String. For example suppose we try to take input using the code:
+  int x = scan.nextInt();
+
+If we ran this code and entered the word "Cat", we would get an error message telling us we have an Input Mismatch Exception.
+
+In general, you’ll get this type of error when you give the Scanner a bigger data type (in terms of memory needed) than it asked for. For example, entering 43.2 when the input statement above runs will cause an error, because the domain of the int variable type is only whole numbers. In order to store decimal types we need a data type with more memory space. 
+
+However suppose we used the following code instead:
+  double y = scan.nextDouble();
+
+Entering a decimal number is expected here, but using an integer such as 6 won't cause an error. This is because the box in memory for a double is bigger than the one for an int, so int values can easily be converted and stored as doubles.
+
+
+Literals and Variables
+In a previous lesson, we saw that string variables can be concatenated with string literals (these were typed in double quotation marks).
+
+More generally a literal is a value in Java which is a direct representation of the data, for example, the int 4, or the double 5.3. You can mix variables and literals when calculating with doubles and ints in Java:
+  int a = 5;
+  double x = 4.2;
+  int b = 2 * a; // b is set to 10
+  double y = x + 3.2; // y is set to 7.4
+
+
+Maximums and Minimums of Primitive Data Types
+Because the boxes used for primitive data types are fixed size it means there are limits to what they can store, even when using the right type of variable. To access the largest and smallest int values which can be stored you can set an int equal to Integer.MAX_VALUE or Integer.MIN_VALUE in your code. These are special final values (see below) which can be accessed in any Java program.
+
+What do you think would happen if you add 1 to the largest possible integer value or subtracted 1 from the smallest integer value?
+
+This is called an integer overflow, because it exceeds the size of the box we are using to save this number in memory. This will result in getting an incorrect value, but you should try it yourself to see exactly what happens.
+  int x = Integer.MAX_VALUE;
+  x = x + 1;
+  System.out.println(x);
+  > -2147483648
+
+
+Final Values
+Let’s say you’re building software that deals with a lot of math, in particular a lot of circles. You’re not going to want to have to type out Pi every time you’re going to use it--it’s quite a long number! To avoid having to keep typing it you can use a variable to store its value. Pi is a constant (it never changes), so we don't want to accidentally change the value of this variable afterwards. Because of this, when you create the pi variable you should add the word final into the variable declaration/initialization statement.
+  final double pi = 3.14159265;
+
+A word which we use before a variable declaration to modify its properties is called a modifier. The final modifier locks in the value of the variable permanently so that it cannot be changed by any other parts of your code.
