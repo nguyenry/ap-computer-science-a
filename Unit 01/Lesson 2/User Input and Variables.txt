@@ -1,0 +1,43 @@
+Scanning Input
+Scanner allows us to take user input and incorporate it into our programs. We’ll always format our Scanner like this, and will discuss later how this works in more detail:
+Scanner scan = new Scanner(System.in);
+
+When we use a Scanner to take input, we usually read a String from the keyboard and store it as a variable.
+
+
+Variables
+We can think of variables as containers in memory. When we declare a variable, we tell the computer to allocate some space in memory for something. We tell it what the name of the thing will be, so it knows how to find it later, and what the type of the thing will be, so it knows how much space to set aside:
+String n; // This tells the computer to allocate space for a String and call that space ‘n’
+
+Variables can change in programming, as they are just containers. When we first put a value in the container we initialize the variable. Before you can print out a String, you must initialize it to a value. Later we can change the variable so it contains a different value. To either initialize or change the value of a variable we use the assignment operator, which is just an equals sign (=). The variable on the left of the equals sign is set to the value on the right of the equals sign:
+n = scan.nextLine(); // Variable n now contains whatever the user types
+n = "John"; // Variable n now contains "John
+
+
+Naming Variables
+We can name our variable almost anything we like, but there are a few rules:
+• We can only use letter/number characters and the special characters _ and $. No spaces or other characters are allowed.
+• Your variable can't start with a number (so num1 is ok as a variable name but 1num is not).
+• You can't use names which already have a meaning in Java (e.g. we can't name our variable String or System).
+
+
+Combining Strings
+When we want to print things out, we can combine literal Strings (things in quotation marks) and variables, for example:
+System.out.println("Hello " + n + " how are you?");
+> Hi John how are you?
+
+In the statement above “Hello ” is a literal String and n is a String variable. When we glue them together using a plus sign, that’s called concatenation. If there were no variable named ‘n’ in memory, this would cause an error when we tried to compile the code.
+
+There are also some rules about variable names: they cannot contain spaces, cannot start with numbers, and cannot share the names of commands, such as “print”.
+
+
+Adding Comments
+You might notice in the examples above there are comments next to some of the code. These are marked with two forward slashes, which tells Java this content will not be compiled or run. Comments can be useful for writing a reminder of what code does, leaving ourselves a to-do list, or for isolating a problem while debugging. There are two main ways we will write comments in this course. Using a double forward slash marks everything from that point to the end of the line as a comment.
+// This is a comment
+
+To mark a block of code as a comment we can use /* to begin the block and  */ to end it. This lets us write comments in the middle of lines and multi-line comments:
+/*
+All comments from here
+To 
+Here
+*/
