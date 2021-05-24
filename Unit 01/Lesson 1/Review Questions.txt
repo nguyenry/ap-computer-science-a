@@ -2,12 +2,12 @@
 Ans:  None of the items listed (meaning String can contain all of the listed types)
 
 2.    To output:
-      Hi
-      There
+        Hi
+        There
 
       You would need to use:
-      System.out._____ ("Hi");
-      System.out.print("There");
+        System.out._____ ("Hi");
+        System.out.print("There");
 Ans:  println
 
 3.    ________ is when a computer checks your program for errors before running it.
