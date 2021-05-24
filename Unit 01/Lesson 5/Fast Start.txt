@@ -1,0 +1,15 @@
+1.    What is x equal to after the following code has been executed:
+        double x = 4.0;
+        double y = 1.5
+        x = x + 2 * y;
+Ans:  7.0
+
+2.    What does x equal after the following code has been executed?
+        int x = 11;
+        x++;
+Ans:  12
+
+3.    What does x equal after the following code has been executed?
+        int x = 13;
+        x = x / 2;
+Ans:  6
