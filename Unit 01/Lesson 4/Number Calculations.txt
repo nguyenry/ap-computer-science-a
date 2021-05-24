@@ -1,0 +1,51 @@
+Arithmetic Operators
+This lesson introduces arithmetic calculations in Java. We can do calculations using arithmetic operators, which are the standard four everyone learns in math: the  '+' and '-' symbols work as we might expect, and the symbols '×' and '÷' are replaced with '*' and '/' respectively. We use the '=' symbol as an assignment operator when we have a number or a calculation on the right-hand side: the variable on the left-hand side will be set to the value of whatever is on the right-hand side. Java follows the same order of operations we’re familiar with from math class. In Java we call this operator precedence, check out this chart if you need to review: Operator Precedence In Java (Links to an external site.)
+  int x = 9;
+  int y = 2; 
+  int z = y + x * x;
+  System.out.println(z);
+  > 83
+
+
+Integer Division
+It’s important to understand a few other aspects of how these calculations work, specifically when dividing integers.
+  int x = 9;
+  int y = 2;
+  System.out.println(x / y);
+  > 4
+
+In the example above, Java does an integer calculation. Though the mathematically correct answer might be 4.5, that would be a double, and Java is only looking at integers. Similarly:
+  int x = 9;
+  int y = 2;
+  double z = x /y ;
+  System.out.println(z);
+  > 4.0
+
+Even though Java knows that z is going to be a double, it’s still only looking at x and y, which are both integers. To solve this issue we need to add a double to the calculation:
+  int x = 9;
+  int y = 2;
+  double z = 1.0 * x / y;
+  System.out.println(z);
+  > 4.5
+
+One more thing to be careful of when using division calculations is to avoid dividing by 0. Dividing by 0 is mathematically impossible, so while the code below will compile correctly it will result in an ArithmeticException error when it is executed:
+  int x = 5;
+  int y = 0;
+  int z = x / y; // This line will cause an error
+
+
+Compound Assignment Operators
+Beyond the arithmetic operations we know from math class, we also have some compound assignment operators that we use in programming. These are used in place of the normal '=' assignment operator and change the value of a variable.
+  int x = 4;
+  x += 2; //The value of x is now 6
+
+We can create these operators by combining any one of our arithmetic operators with the = sign:
+  int x = 3;
+  x *= 7; // The value of x is now 21
+  x -= 3; // The value of x is now 18
+  x /= 6; // The value of x is now 3
+
+There are also two handy unary operators we can use to increment (increase by 1) or decrement (decrease by 1) the value of a variable:
+  int x = 9;
+  x++; // x is now 10
+  x--; // x is now 9
