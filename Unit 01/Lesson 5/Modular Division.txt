@@ -1,0 +1,47 @@
+Modular Division
+This lesson introduces modular division, also known as remainder division, a type of division that is fundamental to various Java applications.
+
+When we divide one integer by another in math class we usually would expect something like this: 7 / 2 = 3.5
+
+Another way you may have seen this expressed is with a remainder:
+7 / 2 = 3 remainder 1
+
+Modular division is concerned with finding the remainder. When we do integer division we say “Six divided by three is two.” When we do modular division we say “Six mod 2 is zero”, because there is no remainder.
+
+To perform modular division in Java we use the % operator:
+  int x = 7;
+  int y = 9;
+  int z = 2;
+
+  System.out.println(x / z);
+  > 3
+
+  System.out.println(x % z);
+  > 1
+
+  System.out.println(y / z);
+  > 4
+
+  System.out.println(y % z);
+  > 1
+
+
+Compound Modulus Operator
+We can also combine modulus (%) with the assignment operator(=), just like we did with our other arithmetic operators, to create a compound operator (%=).
+  y %= z; // This has assigned y to the evaluation of y % z
+  System.out.println(y);
+  > 1
+
+
+Special Cases
+Modular division still works if the first number is smaller than the second number:
+  System.out.println(z % y);
+  > 2
+
+However, modular division still causes an error if we try to divide by zero. This is a runtime error because we don’t necessarily know when we compile the code whether the user will input a zero. For example consider the following code:
+  int x = scan.nextInt();
+  System.out.println(9 % x);
+
+This will compile fine, but if we run it and the user enters 0 we get an error message telling us we have an "ArithmeticException" because we tried to divide by zero.
+
+One of the most common uses of modular division is to tell whether a number is even or odd. If x mod 2 is zero, the number is divisible by 2, and is even. Otherwise, it’s odd. Also, note that the result of a modular division can never be bigger than or equal to the second number.
