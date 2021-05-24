@@ -1,0 +1,20 @@
+1.    What is 57 % 4?
+Ans:  1
+
+2.    What is 3 % 5?
+Ans:  3
+
+3.    What is printed by the following code?
+        int j = 33;
+        j %= 3;
+        System.out.println(j);
+Ans:  0
+
+4.    If you are owed $0.67 in change, which programming statement below would tell you how many quarters you should get? Assume that change is an int variable that stores the number of cents owed (67 in this case).
+Ans:  change / 25
+
+5.    To tell if a number is even or odd you MOD by ______.
+Ans:  2
+
+6.    To find the ones digit of a number you MOD by _______. So for example the ones column of 3467 is 7.
+Ans:  10
