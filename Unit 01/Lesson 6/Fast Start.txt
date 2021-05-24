@@ -1,0 +1,20 @@
+1.    Which of the following expressions in Java is equal to 4?
+Ans:  11 % 7
+
+2.    What is printed when the following code has been executed?
+        int x = 15;
+        int y = 4;
+        System.out.println((2 * x + y) % x);
+Ans:  4
+
+3.    Consider the following program which is intended to get the amount of time (in minutes) it took someone to do the chores and then converts it to hours and minutes.
+        Scanner scan = new Scanner(System.in);
+        int h = 0;
+        int m;
+        System.out.print("How many minutes did it take you to do your chores? ");
+        m = scan.nextInt();
+        /* missing code */
+        System.out.println("It took you " + h + " hours and " + m + " minutes.");
+      Which of the following could replace the missing code so that it all works as intended?
+Ans:  h = m / 60;
+      m = m % 60;
