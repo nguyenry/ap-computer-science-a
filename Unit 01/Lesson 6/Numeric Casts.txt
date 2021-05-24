@@ -1,0 +1,45 @@
+This lesson introduces casting, the process of converting one data type to another.
+
+
+Casting Data Types
+In a previous lesson, we worked around the non-intuitive way Java handles integers by adding a double value to the equation:
+  int x = 9;
+  int y = 2;
+  double z = 1.0 * x / y;
+  System.out.println(z);
+  > 4.5
+
+We can achieve the same effect by casting x to a double:
+  double z = (double) x / y;
+
+
+Widening and Narrowing Conversions
+Casting changes a variable from one data type to another, this can be done to move a data type into a bigger box - a widening conversion, or to move a data type into a smaller box - a narrowing conversion.
+
+The example above is a widening conversion. We’re putting an int into a bigger double box, so that when it’s divided by 2 and needs to have room for a decimal bit, it has one. Java does not throw an error if we don’t cast in that case, but we don’t get the result that we want or expect.
+
+Casting in an expression actually creates a temporary value that will be used when evaluating the expression. In the example below, a temporary double with a value of 7.0 is created and used to evaluate 7.0/2, which then gets assigned to the variable y as 3.5.
+  double x = 7 / 2; // x has value 3, but no error is thrown
+  double y = (double) 7 / 2; // y has value 3.5
+
+Narrowing conversions are different. If we don’t explicitly cast when moving from a larger data type to a smaller one, we’ll get an error telling us there's a “Possible Lossy Conversion” when we try to compile. The phrase "lossy conversion" means we're trying to convert data in a way that loses some of the information: if for example we convert the double 6.34 to an int, we'll lose the exact value as we can't store the decimal part (.34) of the number. This means we need to explicitly cast to tell the Java compiler that we are doing this intentionally.
+  int x = 3.5; // causes an error
+  int y = (int) 3.5; // y has value 3, no error
+  int z = (int) 3.99; // z has value 3, no error
+
+
+Truncating Versus Rounding Doubles
+It’s also important to remember that when Java converts a double to an int, it truncates, it doesn’t round. Truncation means that it just chops off whatever is after the decimal point and throws it away.
+
+If we want to round a positive double to the nearest integer we can add 0.5 before casting to an int. If the decimal part of the number is greater than or equal to 0.5 then the integer part will be increased by 1 before the cast. If the decimal part is below 0.5 the integer part won't be affected:
+  double num = 2.8;
+  int roundNum = (int) (num + 0.5);
+  System.out.println(roundNum);
+  > 3
+
+Note that this only works for positive integers. If we wanted to round a negative number we would have to subtract 0.5 rather than adding it. The table below illustrates how this rounding formula works:
+  Double                + or - 0.5                Cast to an Int
+  2.1                   2.6                       2
+  2.7                   3.2                       3
+  -2.1                  -2.6                      -2
+  -2.5                  -3.0                      -3
